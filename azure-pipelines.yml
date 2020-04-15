@@ -14,7 +14,7 @@ variables:
 steps:
 - task: InstallAppleCertificate@2
   inputs:
-    certSecureFile: '**/*.p12'
+    certSecureFile: 'test/cert.p12'
     certPwd: 'test'
     keychain: 'temp'
     
