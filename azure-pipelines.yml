@@ -12,6 +12,11 @@ variables:
   configuration: 'Release'
 
 steps:
+
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'test/cert.p12'
+    
 #- task: InstallAppleCertificate@2
 #  inputs:
 #    certSecureFile: 'test/cert.p12'
