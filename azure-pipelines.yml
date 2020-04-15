@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/xcode
 
 pool:
-  vmImage: 'macos-latest'
+  vmImage: 'macOs.14'
 
 variables:
   scheme: ''
@@ -36,7 +36,7 @@ steps:
     configuration: 'Release'
     xcodeVersion: 'default'
     exportPath: '$(build.artifactStagingDirectory)'
-
+    packageApp: true
 
 - task: CopyFiles@2
   inputs:
