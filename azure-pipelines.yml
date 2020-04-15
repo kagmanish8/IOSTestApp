@@ -13,19 +13,10 @@ variables:
 
 steps:
 
-<<<<<<< HEAD
-
-=======
->>>>>>> a6dc5399fe59a9b1217f223257169ece1909173a
 - task: CopyFiles@2
   inputs:
     contents: 'test/cert.p12'
     targetFolder: '$(build.artifactStagingDirectory)'
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> a6dc5399fe59a9b1217f223257169ece1909173a
 - task: InstallAppleCertificate@2
   inputs:
     certSecureFile: '$(build.artifactStagingDirectory)/cert.p12'
@@ -64,3 +55,4 @@ steps:
     targetFolder: '$(build.artifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
+
