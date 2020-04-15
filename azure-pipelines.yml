@@ -12,9 +12,16 @@ variables:
   configuration: 'Release'
 
 steps:
+
+
+- task: CopyFiles@2
+  inputs:
+    contents: 'test/cert.p12'
+    targetFolder: '$(build.artifactStagingDirectory)'
+
 - task: InstallAppleCertificate@2
   inputs:
-    certSecureFile: 'test/cert.p12'
+    certSecureFile: '$(build.artifactStagingDirectory)/cert.p12'
     certPwd: 'test'
     keychain: 'temp'
     
