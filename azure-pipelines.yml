@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/xcode
 
 pool:
-  vmImage: 'macos-latest'
+  vmImage: 'macOs 10.14'
 
 variables:
   scheme: ''
@@ -13,17 +13,23 @@ variables:
 
 steps:
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a6dc5399fe59a9b1217f223257169ece1909173a
 - task: CopyFiles@2
   inputs:
     contents: 'test/cert.p12'
     targetFolder: '$(build.artifactStagingDirectory)'
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> a6dc5399fe59a9b1217f223257169ece1909173a
 - task: InstallAppleCertificate@2
   inputs:
     certSecureFile: '$(build.artifactStagingDirectory)/cert.p12'
     certPwd: 'test'
-    keychain: 'temp'
     
 #- task: InstallAppleProvisioningProfile@1
 #  inputs:
@@ -43,6 +49,9 @@ steps:
     sdk: 'iphoneos'
     configuration: 'Release'
     xcodeVersion: 'default'
+#    exportPath: '$(build.artifactStagingDirectory)'
+    exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
+    packageApp: true
 
 - task: CopyFiles@2
   inputs:
