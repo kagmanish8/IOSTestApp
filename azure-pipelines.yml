@@ -35,7 +35,8 @@ steps:
     sdk: 'iphoneos'
     configuration: 'Release'
     xcodeVersion: 'default'
-    exportPath: '$(build.artifactStagingDirectory)'
+#    exportPath: '$(build.artifactStagingDirectory)'
+    exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
     packageApp: true
 
 - task: CopyFiles@2
