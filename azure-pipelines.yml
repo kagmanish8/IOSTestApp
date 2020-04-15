@@ -13,14 +13,15 @@ variables:
 
 steps:
 
-- task: DownloadSecureFile@1
+- task: CopyFiles@2
   inputs:
-    secureFile: 'test/cert.p12'
+    contents: 'test/cert.p12'
+    targetFolder: '$(build.artifactStagingDirectory)'
     
-#- task: InstallAppleCertificate@2
-#  inputs:
-#    certSecureFile: 'test/cert.p12'
-#    certPwd: 'test'
+- task: InstallAppleCertificate@2
+  inputs:
+    certSecureFile: '$(build.artifactStagingDirectory)/cert.p12'
+    certPwd: 'test'
     
 #- task: InstallAppleProvisioningProfile@1
 #  inputs:
