@@ -35,6 +35,8 @@ steps:
     sdk: 'iphoneos'
     configuration: 'Release'
     xcodeVersion: 'default'
+    exportPath: '$(build.artifactStagingDirectory)'
+
 
 - task: CopyFiles@2
   inputs:
